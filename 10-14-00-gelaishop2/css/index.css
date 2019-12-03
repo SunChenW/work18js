@@ -1,7 +1,15 @@
+.container{
+	padding: 55px 0 70px 0;
+}
 /* 顶部 */
 .top{
 	background-color: #39435b;
 	padding: 10px 15px;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99;
 }
 /* 顶部logo */
 .top .top_logo{
@@ -41,34 +49,8 @@
 	background-position: -336px 0; /* 精灵图位置调整 */
 }
 /* 轮播区域 */
-.banner{
-	width: 100%;
-	overflow: hidden;
-}
-.banner .slide{
-	flex: 1;
-}
-.banner .wrap{
-	width: 300%;
-	display: flex;
-	position: relative;
-	/* 设置动画:动画名称 动画时间 动画速度 无限重复  */
-	animation: banner 10s ease-out infinite;
-}
 .banner img{
 	width: 100%;
-}
-/* 定义动画帧 */
-@keyframes banner{
-	0%,30%{
-		left: 0;
-	}
-	35%,65%{
-		left: -100%;
-	}
-	70%,100%{
-		left: -200%;
-	}
 }
 /* 导航区域 */
 .nav{
@@ -153,4 +135,110 @@
 }
 .books .right img{
 	width: 100%;
+}
+/* 产品 */
+.products{
+	margin-top: 15px;
+	background-color: #fff;
+}
+.products .title{
+	line-height: 20px;
+	padding: 5px 10px;
+	background-color: #fff;
+	font-weight: bold;
+	border-bottom: 1px solid lightgray;
+}
+.products .title span{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-position: 3px -90px;
+	vertical-align: text-bottom;
+}
+.products .title .more{
+	color: #ff9900;
+	font-size: 12px;
+	font-weight: normal;
+}
+/* 左侧 */
+.products .left{
+	float: right;
+	width: 53%;
+	border-left: 1px lightgray solid;
+}
+/* 左侧上 */
+.products .left .books_top{
+	text-align: center;
+	padding: 15px;
+	border-bottom: 1px lightgray solid;
+}
+.products .left .books_top img{
+	width: 50%;
+}
+/* 左侧下 */
+.products .left .books_bottom{
+	display: flex;
+	text-align: center;
+}
+.products .left .books_bottom a{
+	padding: 15px;
+	flex: 1;
+}
+.products .left .books_bottom img{
+	width: 50%;
+}
+/* 右侧 */
+.products .right{
+	float: right;
+	padding:65px 15px 15px;
+	width: 47%;
+}
+.products .right img{
+	width: 100%;
+}
+/* 底线 */
+.line{
+	text-align: center;
+	color: gray;
+	padding: 5px 0;
+}
+/* 底部导航 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #39435b;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 99;
+}
+.footer a{
+	width: 30px;
+	padding-top: 30px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+	color: white;
+}
+.footer a:nth-child(1){
+	background-position: -24px -200px;
+}
+.footer a:nth-child(2){
+	background-position: -127px -200px;
+}
+.footer a:nth-child(3){
+	background-position: -231px -200px;
+}
+.footer a:nth-child(4){
+	background-position: -335px -200px;
+}
+.footer a:first-child{
+	color: #007AFF;
+	background-position-y:-259px ;
+}
+.footer a:hover{
+	color: #007AFF;
+	background-position-y:-259px ;
 }

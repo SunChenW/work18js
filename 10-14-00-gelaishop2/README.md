@@ -384,7 +384,7 @@ var mySwiper = new Swiper('.swiper-container', {
 }
 ```
 
-### 书籍
+### 书籍部分
 
 - 无只要知识点：浮动、弹性盒子、盒子模型
 - html
