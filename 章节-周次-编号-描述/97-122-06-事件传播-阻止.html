@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style type="text/css">
+			ul{
+				background-color: deeppink;
+			}
+			li{
+				width: 50px;
+				height: 50px;
+				background-color: deepskyblue;
+				border: 1px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//子标签发生点击事件后，会将点击事件向父标签传播，进而触发父标签的点击事件。
+				//事件默认由子标签向父标签传播，称为冒泡传播。最终会将事件传播给window
+				$("ul").click(function(){
+					console.log("ul被点击了。")
+				})
+				$("li").click(function(e){
+					console.log("li被点击了。")
+					//阻止事件的传播
+					//return false;
+					e.stopPropagation();
+				})
+			})
+		</script>
+	</body>
+</html>

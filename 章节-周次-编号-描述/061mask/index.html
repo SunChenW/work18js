@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>遮罩层</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.mask{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.5);
+				top:0;
+				left:0;
+			}
+			.dialog{
+				width: 50%;
+				min-width: 500px;
+				background-color: #fff;
+				border: 1px black solid;
+				/*实现居中：由于子标签宽度会大于父标签，直接margin：0 auto；不适用*/
+				/*定位+margin/+位移*/
+				position: relative;
+				left: 50%; /*右移父标签的一半*/
+				transform: translateX(-50%); /*左移自己的一半*/
+				/*垂直只需要向下一点*/
+				top: 10%;
+			}
+			.title{
+				padding: 5px;
+				background-color: rgba(0,0,0,0.3);
+			}
+			.content{
+				padding: 5px;
+				text-indent: 2em;
+				line-height: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">显示遮罩</button>
+		
+		<script src="jquery-1.11.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//点击按钮
+				$("#btn").click(function(){
+					//给创建的标签添加内容html()、样式css()、属性attr()、类名addClaa()、事件处理click()...
+					//遮罩
+					$("<div></div>")
+					.attr("class","mask")
+					.click(function(){
+						$(this).remove()
+					})
+					.appendTo("body")
+					//对话框
+					$("<div></div>")
+					.addClass("dialog")
+					.click(function(){
+						return false; //阻止dialog上的事件传播
+					})
+					.appendTo(".mask")
+					//标题
+					$("<h1></h1>")
+					.html("Hello JQuery")
+					.addClass("title")
+					.appendTo(".dialog")
+					//内容
+					$("<p></p>")
+					.html('jQuery是一个快速、简洁的JavaScript框架。jQuery是一个快速、简洁的JavaScript框架。jQuery是一个快速、简洁的JavaScript框架。jQuery是一个快速、简洁的JavaScript框架。jQuery是一个快速、简洁的JavaScript框架。jQuery是一个快速、简洁的JavaScript框架。')
+					.addClass("content")
+					.appendTo(".dialog")
+				})
+			})
+		</script>
+	</body>
+</html>

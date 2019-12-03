@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    html, body {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      font-family: "微软雅黑";
+      font-size: 62.5%;
+    }
+    
+    .boxDom {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .idDom {
+      width: 100%;
+      height: 100px;
+      background: #666;
+      position: fixed;
+      bottom: 0px;
+    }
+    
+    .content {
+      display: inline-block;
+      width: 430px;
+      height: 40px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+    
+    .title {
+      display: inline;
+      font-size: 4em;
+      vertical-align: bottom;
+      color: #fff;
+    }
+    
+    .text {
+      border: none;
+      width: 300px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 2.4em;
+    }
+    
+    .btn {
+      width: 60px;
+      height: 30px;
+      background: #f90000;
+      border: none;
+      color: #fff;
+      font-size: 2.4em;
+    }
+    
+    span {
+      height: 40px;
+      position: absolute;
+      color: #000;
+      font-size: 4em;
+      line-height: 1.5em;
+      cursor: pointer;
+      /*设置标签固定宽度，文字超出会有省略号*/
+      width: 300px; /*宽*/
+      overflow: hidden; /*溢出隐藏*/
+      white-space: nowrap; /*文本不换行*/
+      text-overflow: ellipsis; /*文本溢出显示省略号*/
+     /*背景色 位置*/
+    	/*background-color: rgba(100,100,100,0.3);*/
+    }
+  
+  </style>
+</head>
+
+<body>
+
+<div class="boxDom" id="boxDom">
+  <div class="idDom" id="idDom">
+    <div class="content">
+      <p class="title">吐槽:</p>
+      <input type="text" class="text" id="text"/>
+      <button type="button" class="btn" id="btn">发射</button>
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+  
+  $(function () {
+   	/*1.点击发射 
+   	 *2.获取用户输入的数据---处理---验证
+   	 *3.创建 span标签--确定span可以出现的位置---设置span的位置动画（删除span）---将span添加到页面--- 删除span
+   	 */
+   	$("#btn").click(function(){
+   		//获取用户输入的数据---处理---验证
+   		var userMsg = $("#text").val() //val()方法获取用户的输入信息
+   		userMsg = userMsg.trim(); //字符串处理  去掉两端空格
+   		if(userMsg==""){
+   			alert("请输入有效信息~~~");
+   			$("#text").val(""); //删除已有的信息
+   		}else{
+   			//创建 span标签--确定span可以出现的位置---设置span的位置动画（删除span）---将span添加到页面--- 删除span
+   			//获取span的位置范围
+   			var x = $("#boxDom").width();
+   			var y = $("#boxDom").height() - $("#idDom").height()
+   			//创建span 添加效果
+   			$("<span></span>")
+   			.text(userMsg) //设置内容
+   			.css({ //设置样式：可以不带单位
+   				left:x + 50,
+   				top: Math.random() * (y-40),
+   				color:"rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")"
+   			})
+   			//animate({要变到的样式}，时间，回调函数) animate({}，2000，function(){})
+   			.animate({
+   				left:- $(this).width()
+   			},2000,function(){
+   				$(this).remove()
+   			})
+   			.appendTo("#boxDom")
+   			
+   			//删除已有的信息
+   			$("#text").val(""); 
+   		}
+   	})
+	})
+  
+</script>
+</html>

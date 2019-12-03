@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			ol,
+			li {
+				list-style: none;
+			}
+			
+			ul {
+				background-color: lightblue;
+			}
+			
+			li {
+				width: 50px;
+				height: 50px;
+				background-color: palevioletred;
+				border: 2px black solid;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="btn">按钮</button>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			//原生js，的入口 load ，保证页面加载之后（整个页面全部加载），再执行js。 一个页面只能有一个js入口。
+			window.onload = function(){
+				console.log(3) 
+			}
+			window.onload = function(){
+				console.log(4)
+			}
+			//jquery 入口ready：保证 页面加载完毕（DOM加载，不包含图片等非文字资源）。一个可以有多个jquery入口
+			$(document).ready(function(){
+				console.log(1)
+			})
+			$(function(){
+				console.log(2)
+			})
+		</script>
+	</body>
+
+</html>

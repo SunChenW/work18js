@@ -1,0 +1,104 @@
+/*初始化*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+ul,ol,li{
+	list-style: none;
+}
+/*清楚图片的底部留白*/
+img{
+	vertical-align: middle;
+}
+/*最外层*/
+.box{
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
+	border: 5px #44f2f2 solid;
+	position: relative;
+}
+/*轮播区域*/
+.swiper{
+	width: 1200px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	background-color: pink;
+}
+/*轮播图*/
+.swiper ul.inner{
+	width: 600%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.swiper ul.inner li{
+	float: left;
+}
+.swiper ul.inner li:hover{
+	cursor: move;
+}
+.swiper ul.inner li img{
+	width: 100%;
+}
+/*指示器*/
+.swiper ol.indicators{
+	position: absolute;
+	right: 30px;
+	bottom: 10px;
+}
+.swiper ol.indicators li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	line-height: 15px;
+	cursor: pointer;
+	background-color: lightgray;
+	margin: 0 3px;
+	border-radius: 50%;
+	border: 3px darkslategray solid;
+	
+}
+.swiper ol.indicators li.current{
+	background-color: orange;
+	border-color: #fff;
+}
+/*控制器*/
+.control span{
+	vertical-align: middle;
+	font-size: 32px;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 45px;
+	cursor: pointer;
+	background-color: rgba(255,255,255,0);
+	border-radius: 5px;
+	color: #ccc;
+}
+.control span.left{
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.control span.right{
+	right: 10px;
+	top: 50%;
+	margin-top: -25px;
+}
+.control span:hover{
+	background-color: rgba(0,0,0,.3);
+	color: white;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>遮罩</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">显示遮罩</button>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					//创建 遮罩相关的jquery标签
+					var mask = $("<div></div>");
+					var dialog = $("<div></div>");
+					var title = $("<h1></h1>");
+					var content = $("<p></p>");
+					// 将创建的jquery标签 添加到页面中
+					mask.appendTo("body");
+					dialog.appendTo(mask);
+					title.appendTo(dialog);
+					content.appendTo(dialog);
+					//给遮罩设置样式、内容、事件、属性 ..
+					mask
+					.css({
+						"position": "fixed",
+						"left": 0,
+						"top": 0,
+						"width": "100%",
+						"height": "100%",
+						"background-color": "rgba(0,0,0,0.5)"
+					})
+					.click(function(){
+						$(this).remove();
+					})
+					//给对话框 设置 样式、内容、事件、属性 ..
+					dialog
+					.css({
+						"width": "50%",
+						"min-width": "500px",
+						"background-color": "#fff",
+						"border":"1px black solid",
+						/*居中显示*/
+						"position": "relative",
+						"left": "50%",
+						"top": "10%",
+						"transform": "translateX(-50%)"
+					})
+					.click(function(){
+						return false;
+					})
+					//给 对话框标题 设置 样式、内容、事件、属性 ..
+					title
+					.css({
+						"background-color":"lightgray",
+						"padding":"5px"
+					})
+					.html("Hello JQuery")
+					//给对话框 内容设置 样式、内容、事件、属性 ..
+					content
+					.css({
+						"text-indent":"2em",
+						"line-height":"1.5em",
+						"padding":"5px"
+					})
+					.html("jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。jQuery的核心特性可以总结为：具有独特的链式语法和短小清晰的多功能接口；具有高效灵活的css选择器，并且可对CSS选择器进行扩展；拥有便捷的插件扩展机制和丰富的插件。jQuery兼容各种主流浏览器，如IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+等。")
+				})
+			})
+		</script>
+	</body>
+</html>

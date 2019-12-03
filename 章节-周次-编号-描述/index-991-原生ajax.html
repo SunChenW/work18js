@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		1、ajax的作用？
+			AJAX 是一种用于创建快速动态网页的技术。
+			是请求技术--动态数据（动态更新页面）
+		2、ajax的特点？
+			异步（同步）、动态更新
+		3、使用方式？
+			4    获取请求对象--配置请求--发送请求--添加事件
+		4、get与post？
+			页面中其他请求方式：
+				link scripr img a  /////get
+				form get--post
+			刷新更新页面---请求到的数据，是浏览器直接处理---刷新显示新数据
+			get
+				1、get 发送的数据是直接拼接在url之后
+				2、url 有长度限制 只有几个k，所有不能发送大量数据
+				3、明文发送，不安全 ，不适合敏感操作
+			post
+				1、不拼接在url上，（请求体）
+				2、大小，在理论上没有限制
+				3、适合敏感操作
+		<script>
+			// 获取请求对象
+			var xml = new XMLHttpRequest();
+			// 配置请求 get post 异步，同步 地址
+			xml.open("get","test.txt?name=sc")
+			// 发送请求
+			xml.send(null);
+			// 设置 请求状态改变事件 接收服务器发回的数据
+			xml.onreadystatechange = function(){
+				if(xml.readyState==4){
+					var text = xml.responseText;
+					document.write(text)
+					// 操作dom--不会刷新页面
+				}
+			}
+		</script>
+	</body>
+</html>

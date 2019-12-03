@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<div>用户名：<input type="text"><span></span></div>
+			<div>密&emsp;码：<input type="text"><span></span></div>
+			<div>手机号：<input type="text"><span></span></div>
+			<div>身份证：<input type="text"><span></span></div>
+		</form>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			// - 用户名正则：1~4位 、只能包含中文字符
+			// - 密码正则：6~16位、只能包含数字、字母、_
+			// - 手机号正则： 查询常用格式
+			// - 身份证号正则：查询常用格式
+
+			// 更改并失去焦点 change事件 失去焦点 blur 事件
+			$("input").eq(0).on("input",function(){
+				if(/[\u4e00-\u9fa5]{1,4}/.test($(this).val())){
+					$(this).next().html("√")
+				}else{
+					$(this).next().html("×")
+				}
+			})
+			$("input").eq(1).on("input",function(){
+				if(/\w{6,16}/.test($(this).val())){
+					$(this).next().html("√")
+				}else{
+					$(this).next().html("×")
+				}
+			})
+			$("input").eq(2).on("input",function(){
+				if(/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test($(this).val())){
+					$(this).next().html("√")
+				}else{
+					$(this).next().html("×")
+				}
+			})
+			$("input").eq(3).on("input",function(){
+				if(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test($(this).val())){
+					$(this).next().html("√")
+				}else{
+					$(this).next().html("×")
+				}
+			})
+		</script>
+	</body>
+</html>

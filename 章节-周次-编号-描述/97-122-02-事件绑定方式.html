@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style type="text/css">
+			ul{
+				background-color: deeppink;
+			}
+			li{
+				width: 50px;
+				height: 50px;
+				background-color: deepskyblue;
+				border: 1px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//li 添加点击事件
+				//事件对应的方法
+				$("li").click(function(){
+					console.log("一般方式添加的点击事件")
+				})
+				//bind方式
+				$("li").bind("click",function(){
+					console.log("bind方式添加的点击事件")
+				})
+				//one方式 绑定的事件只会执行一次，然后就自动解绑
+				$("li").one("click",function(){
+					console.log("one方式添加的点击事件")
+				})
+				//jquery1.7 之后提供的方式。 没有特殊需求推荐使用on()
+				$("li").on("click",function(){
+					console.log("on方式添加的点击事件")
+				})
+				//除了以上方式外，还有一个特殊的绑定事件方式hover()。专门用来同时绑定鼠标移入与移出事件，类似于css中伪类:hover
+				$("li").hover(function(){
+					console.log("移入")
+				},function(){
+					console.log("移出")
+				})
+			})
+		</script>
+	</body>
+</html>

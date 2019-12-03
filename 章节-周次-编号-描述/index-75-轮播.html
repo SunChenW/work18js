@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery手写轮播</title>
+		<!--引入自己编写的css样式-->
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<!-- 引入线上cdn jquery源码 -->
+		<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+		<!-- 引入自己编写的jquery 代码 -->
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div class="swiper">
+			<!--轮播区域-->
+			<ul class="inner clearfix">
+				<li><img src="images/1.jpg" alt="" /></li>
+				<li><img src="images/2.jpg" alt="" /></li>
+				<li><img src="images/3.jpg" alt="" /></li>
+				<li><img src="images/4.jpg" alt="" /></li>
+				<li><img src="images/5.jpg" alt="" /></li>
+			</ul>
+			<!--指示器-->
+			<ol class="indicator clearfix">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<!--控制器-->
+			<div class="control">
+				<span class="left">&lt;</span>
+				<span class="right">&gt;</span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul,ol,li{
+				list-style: none;
+			}
+			/*清除浮动*/
+			.clearfix:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			/*img兼容：图片会出现底部白边*/
+			img{
+				vertical-align: middle;
+				/*float: left;
+				font-size: 0;*/
+			}
+			
+			/*正式样式*/
+			.box{
+				width: 1000px;
+				height: 400px;
+				border: 5px red solid;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			ul{
+				width: 1200px;
+				height: 400px;
+			}
+			li{
+				float: left;
+				width: 200px;
+				height: 400px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<!--.box>ul>li>img-->
+		<div class="box">
+			<ul>
+				<li><img src="images/1.jpg" alt="" /></li>
+				<li><img src="images/2.jpg" alt="" /></li>
+				<li><img src="images/3.jpg" alt="" /></li>
+				<li><img src="images/4.jpg" alt="" /></li>
+				<li><img src="images/5.jpg" alt="" /></li>
+			</ul>
+		</div>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//初始的布局：img溢出显示，溢出隐藏
+				//动画执行的时候，li的总大小可能超过ul。只需要把ul设置大点，就不会出现闪烁问题
+				//鼠标进入 li ，动画设置宽度800，其他兄弟宽度是50
+				$("li").mouseenter(function(){
+					$(this).stop().animate({width:800},500)
+					.siblings().stop().animate({width:50},500)
+				})
+				//鼠标离开整个图片区域，动画设置所有的li 200
+				$(".box").mouseleave(function(){
+					$("li").stop().animate({width:200},500)
+				})
+			})
+		</script>
+	</body>
+</html>

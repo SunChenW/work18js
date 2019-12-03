@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片预览</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			ul{
+				width: 800px;
+				display: flex;
+				margin: 0 auto;
+			}
+			li{
+				flex: 25%;
+			}
+			li img{
+				height: 200px;
+				width: 100%;
+				cursor: pointer;
+			}
+			div{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="smallImg">
+			<li><img src="img/god (1).jpg" alt="" /></li>
+			<li><img src="img/god (2).jpg" alt="" /></li>
+			<li><img src="img/god (3).jpg" alt="" /></li>
+			<li><img src="img/god (4).jpg" alt="" /></li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//思路 鼠标进入小图时，获取鼠标的位置，创建 大图 ，设置大图的位置。
+				//鼠标在小图上移动时，改变大图位置
+				//鼠标离开小图时，删除大图
+				
+				$(".smallImg img")
+				.mouseenter(function(e){
+					//获取鼠标坐标
+					var x = e.pageX;
+					var y = e.pageY;
+					//创建 大图
+					$("<img />")
+					.attr("src",$(this).attr("src"))
+					.addClass("bigImg")
+					.css({
+						position: "fixed",
+						left: x + 30,
+						top: y + 30,
+						width: "500px",
+						height: "500px",
+					})
+					.appendTo("body")
+					
+				})
+				.mousemove(function(e){
+					//获取鼠标坐标
+					var x = e.pageX;
+					var y = e.pageY;
+					//设置大图的位置
+					$(".bigImg")
+					.css({
+						left: x + 30,
+						top: y + 30
+					})
+				})
+				.mouseleave(function(){
+					//删除大图
+					$(".bigImg").remove()
+				})
+			})
+		</script>
+	</body>
+</html>

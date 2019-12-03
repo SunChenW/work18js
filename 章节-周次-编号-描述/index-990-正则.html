@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- - 在登录注册过程中，使用正则验证用户输入的数据是否合法。
+		- 用户名正则：6~16位 、只能包含中文字符
+		- 密码正则：6~16位、只能包含数字、字母、_
+		- 手机号正则： 查询常用格式
+		- 身份证号正则：查询常用格式 -->
+		<!-- 
+		 &emsp; &nbsp;
+		 -->
+		<form>	
+			<div>用户名：<input type="text"><span></span></div>
+			<div>密&emsp;码：<input type="text"><span></span></div>
+			<div>手机号：<input type="text"><span></span></div>
+			<div>身份证：<input type="text"><span></span></div>
+		</form>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 根据规则，输入完成以后，符合规则 显示 √，不符合规则显示×
+				//input change focus blur keydown keyup keypress
+				$("input").eq(0).on("input",function(){
+					// 获取表单的值
+					var val = $(this).val();
+					// 正则验证 true false
+					var flag = /^[\u2E80-\u9FFF]{6,16}$/.test(val)
+					// 根据结果，显示span内容
+					if(flag){
+						$(this).next().html("√")
+					}else{
+						$(this).next().html("×")
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

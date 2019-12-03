@@ -1,0 +1,240 @@
+/* 顶部 */
+.top{
+	background-color: #39435b;
+	padding: 10px 15px;
+}
+/* 顶部logo */
+.top .top_logo{
+	width: 120px;
+	height: 35px;
+}
+.top .top_logo a{
+	width: 100%;
+	height: 35px;
+}
+/* 顶部搜索 */
+.top .top_search{
+	background-color: #e1e5ee;
+	border-radius: 17px; /* 设置圆角 */
+	width: calc(100% - 160px);  /* 使用css函数,计算结果. */
+}
+.top .top_search a{
+	width: 20px;
+	height: 35px;
+	background-position: -130px 0; /* 精灵图位置调整 */
+	margin:0 5px;
+}
+.top .top_search input{
+	border: none;
+	background-color: #e1e5ee;
+	margin-top: 10px;
+	width: calc(100% - 40px); /* 使用css函数,计算结果. */
+}
+/* 顶部用户 */
+.top .top_user{
+	width: 35px;
+	height: 35px;
+}
+.top .top_user a{
+	width: 100%;
+	height: 35px;
+	background-position: -336px 0; /* 精灵图位置调整 */
+}
+/* 轮播区域 */
+.banner{
+	width: 100%;
+	overflow: hidden;
+}
+.banner .slide{
+	flex: 1;
+}
+.banner .wrap{
+	width: 300%;
+	display: flex;
+	position: relative;
+	/* 设置动画:动画名称 动画时间 动画速度 无限重复  */
+	animation: banner 10s ease-out infinite;
+}
+.banner img{
+	width: 100%;
+}
+/* 定义动画帧 */
+@keyframes banner{
+	0%,30%{
+		left: 0;
+	}
+	35%,65%{
+		left: -100%;
+	}
+	70%,100%{
+		left: -200%;
+	}
+}
+/* 导航区域 */
+.nav{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #fff;
+}
+.nav a{
+	width: 50px;
+	padding-top: 60px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+}
+.nav a:nth-child(1){
+	background-position: -24px -110px;
+}
+.nav a:nth-child(2){
+	background-position: -116px -110px;
+}
+.nav a:nth-child(3){
+	background-position: -206px -110px;
+}
+.nav a:nth-child(4){
+	background-position: -298px -110px;
+}
+/* 书籍 */
+.books{
+	margin-top: 15px;
+	background-color: #fff;
+}
+.books .title{
+	line-height: 20px;
+	padding: 5px 10px;
+	background-color: #fff;
+	font-weight: bold;
+	border-bottom: 1px solid lightgray;
+}
+.books .title span{
+	width: 20px;
+	height: 20px;
+	background-position: 3px -48px;
+	vertical-align: text-bottom;
+}
+.books .title .more{
+	color: #ff9900;
+	font-size: 12px;
+	font-weight: normal;
+}
+.books .left{
+	width: 55%;
+	border-right: 1px lightgray solid;
+}
+.books .left .one {
+	padding: 15px;
+	border-bottom: 1px lightgray solid;
+}
+.books .left .one img{
+	width: 100%;
+}
+.books .left .two{
+	padding: 15px;
+	display: flex;
+}
+.books .left .two a{
+	padding: 15px;
+	display: block;
+	flex: 1;
+}
+.books .left .two img{
+	width: 100%;
+}
+.books .right{
+	padding:40px 15px 15px;
+	width: 45%;
+}
+.books .right img{
+	width: 100%;
+}
+/* 数码产品 */
+.products{
+	margin-top: 15px;
+	background-color: #fff;
+}
+.products .title{
+	line-height: 20px;
+	padding: 5px 10px;
+	background-color: #fff;
+	font-weight: bold;
+	border-bottom: 1px solid lightgray;
+}
+.products .title span{
+	width: 20px;
+	height: 20px;
+	background-position: 3px -48px;
+	vertical-align: text-bottom;
+}
+.products .title .more{
+	color: #ff9900;
+	font-size: 12px;
+	font-weight: normal;
+}
+.products .left{
+	width: 55%;
+	border-left: 1px lightgray solid;
+}
+.products .left .one {
+	padding: 15px;
+	border-bottom: 1px lightgray solid;
+	text-align: center;
+}
+.products .left .one img{
+	width: 50%;
+}
+.products .left .two{
+	padding: 15px;
+	text-align: center;
+}
+.products .left .two a{
+	padding: 15px;
+}
+.products .left .two img{
+	width: 50%;
+}
+.products .right{
+	padding:40px 15px 15px;
+	width: 45%;
+}
+.products .right img{
+	width: 100%;
+}
+/* 底线 */
+.hold{
+	text-align: center;
+	padding: 15px;
+	color: darkgray;
+}
+/* 底部 */
+/* 导航区域 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #fff;
+}
+.footer a{
+	width: 30px;
+	padding-top: 60px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+}
+.footer a:nth-child(1){
+	background-position: -24px -195px;
+}
+.footer a:nth-child(2){
+	background-position: -128px -195px;
+}
+.footer a:nth-child(3){
+	background-position: -232px -195px;
+}
+.footer a:nth-child(4){
+	background-position: -335px -195px;
+}
+.footer a:hover{
+	color: #00BFFF;
+	background-position-y: ;
+}

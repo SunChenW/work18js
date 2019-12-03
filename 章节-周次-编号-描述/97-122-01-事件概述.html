@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件概述</title>
+	</head>
+	<body>
+		<!--
+			本节主要介绍事件的具体操作方式：
+			1. 了解 jquery入口函数 与 js入口函数的区别
+			2. 事件的绑定方式： click() on() bind() one()
+			3. 事件解除绑定的方式： off()  unbind()
+			4. 模拟事件（触发事件）：trigger()
+			5. 事件传播：
+				阻止事件传播
+				利用事件传播进行事件代理
+				jquery中on() 实现事件代理
+			6. 事件的默认行为：阻止事件的默认行为 
+		-->
+		
+		<!--了解 jquery入口函数 与 js入口函数的区别-->
+		<div>点我</div>
+		<img src="img/god (1).jpg" alt="" />
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				/*我们写的jquery入口函数 是 $(document).ready(function(){}) 的简化写法，
+				 *这是给 document 添加了一个ready（加载）事件。保证页面加载完毕（DOM加载完毕，不包含图片等非文字资源）之后，再执行其中的jquery代码。
+				 *一个页面可以有多个jquery入口函数
+				 * */
+				
+				/*在使用原生js开发时，为了保证页面加载之后再执行相应的js，也会写一个入口函数。window.onload = function(){}
+				 * 这是给window添加一个load（加载）事件。页面加载完毕（页面所有资源加载完毕，包含图片等非文字资源）之后，再执行其中的js代码。
+				 * 一个页面只能有一个js入口函数。
+				 * */
+			})
+			window.onload = function(){
+				console.log("js 入口 1")
+			}
+			window.onload = function(){
+				console.log("js 入口 2")
+			}
+			$(function(){
+				console.log("jq 入口 1")
+			})
+			$(function(){
+				console.log("jq 入口 2")
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			ol,
+			li {
+				list-style: none;
+			}
+			
+			ul {
+				background-color: lightblue;
+			}
+			
+			li {
+				width: 50px;
+				height: 50px;
+				background-color: palevioletred;
+				border: 2px black solid;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="btn">按钮1</button>
+		<button class="btn">按钮2</button>
+		<button class="btn">按钮3</button>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				/*jquery事件绑定方式
+				1.常用事件全部封装了方法,直接调用即可 click() mouseenter()
+				2. on() bind() one() hover()*/
+				$("li").click(function(){
+					console.log("一般方式添加的点击事件")
+				})
+				//bind
+				$("li").bind("click",function(){
+					console.log("bind方式添加的点击事件")
+				})
+				//on
+				$("li").on("click",function(){ //这个是推荐使用的
+					console.log("on方式添加的点击事件")
+				})
+				//one 绑定事件，一旦触发就会解绑
+				$("li").one("click",function(){ //这个是推荐使用的
+					console.log("one方式添加的点击事件")
+				})
+				//hover 很特殊，用来简化 mouseenter mouseleave
+				$("li").mouseenter()
+				$("li").mouseleave()
+				//hover中传入两个函数，前边代表进入的效果，后边代表出去的效果
+				$("li").hover(function(){
+					$(this).css("width","200px")
+				},function(){
+					$(this).css("width","50px")
+				})
+				
+				
+				//解绑事件 off() unbind()
+				$("button").eq(0)
+				.click(function(){
+					//解绑指定的事件
+					$("li").off("click")
+				})
+				//解绑事件 off() unbind()
+				$("button").eq(1)
+				.click(function(){
+					//解绑所有事件
+					$("li").off()
+				})
+				
+				//使用代码直接触发(模拟)标签的绑定事件
+				$("button").eq(2)
+				.click(function(){
+					//模拟li的点击事件，进而触发点击事件的处理函数
+					$("li").trigger("click")
+				})
+			})
+		</script>
+	</body>
+
+</html>

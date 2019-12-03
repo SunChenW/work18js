@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style type="text/css">
+			li{
+				border: 1px black solid;
+				width: 200px;
+				height: 200px;
+				background-color: deepskyblue;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			本节主要介绍动画效果的使用：
+			1.jquery中三种动画的使用：
+			2.掌握自定义动画的使用：
+			3.掌握动画队列的概念：
+			4.掌握stop()的使用：
+			5.掌握动画回调函数的使用：
+		-->
+		<button>显示</button>
+		<button>隐藏</button>
+		<button>切换</button>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//除了以上三种特定动画，我们可以使用animate() 实现任意的动画效果
+				//animate 不支持 颜色动画
+				$("button").eq(0).click(function(){
+					$("li").animate({
+						"width":"400px",
+						"height":"400px",
+						"left":"200px",
+						"top":"100px",
+						"border-radius":"50%"
+					},"fast")
+				})
+			})
+		</script>
+	</body>
+</html>

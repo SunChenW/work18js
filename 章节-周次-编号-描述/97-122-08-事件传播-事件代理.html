@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style type="text/css">
+			ul{
+				background-color: deeppink;
+			}
+			li{
+				width: 50px;
+				height: 50px;
+				background-color: deepskyblue;
+				border: 1px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<button>添加</button>
+		<ul>
+			<li>1</li>
+		</ul>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(function(){
+				//事件传播过程中，事件处理函数接受到的事件对象，都是同一个。也就是说如果我们点击了子标签，事件传播触发的所有的点击事件接受到的e为同一个数据，都是事件源（被点击的子标签）的信息。
+				//不管子标签是不是新建的，只要发生点击事件，都会传播给父标签。我们只需要在父标签的点击事件处理函数中，通过事件象判断发生的事件是否由子标签触发，即可处理子标签的点击事件。
+				
+				$("button").click(function(){
+					$("<li>1</li>").appendTo("ul")
+				})
+				//给父标签 添加点击事件
+				$("ul").click(function(e){
+					//通过事件对象获取事件源
+					var target = e.target;
+					//获取事件源的标签名并判断事件源是否为 子标签
+					if(target.nodeName=="LI"){
+						//点的是子标签处理
+						console.log("点击的是子标签li")
+						$(target).css("background-color","red")
+					}else{
+						//点的师父标签 不处理
+						console.log("点击的是父标签ul")
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
