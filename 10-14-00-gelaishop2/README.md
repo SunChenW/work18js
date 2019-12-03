@@ -278,6 +278,13 @@ html {
 <https://blog.csdn.net/sun_chen_93/article/details/103242569> 
 
 - 使用swiper插件轮播
+- 需要首先引入swiper源码
+
+```html
+
+```
+
+- html代码
 
 ```html
 <div class="banner">
@@ -389,16 +396,16 @@ var mySwiper = new Swiper('.swiper-container', {
 					<span href="javascript:;" class="icon_book"></span>书籍资料
 					<a href="javascript:;" class="more fr">更多></a>
 				</h3>
-				<div class="left fl">
-					<div class="one">
+				<div class="left">
+					<div class="books_top">
 						<a href=""><img src="img/bz01.png" alt=""></a>
 					</div>
-					<div class="two">
+					<div class="books_bottom">
 						<a href=""><img src="img/book1.png" alt=""></a>
 						<a href=""><img src="img/book1.png" alt=""></a>
 					</div>
 				</div>
-				<div class="right fl">
+				<div class="right">
 					<a href=""><img src="img/books.png" alt=""></a>
 				</div>
 			</div>
@@ -420,9 +427,10 @@ var mySwiper = new Swiper('.swiper-container', {
 	border-bottom: 1px solid lightgray;
 }
 .books .title span{
+	float: left;
 	width: 20px;
 	height: 20px;
-	background-position: 3px -48px;
+	background-position: 3px -50px;
 	vertical-align: text-bottom;
 }
 .books .title .more{
@@ -430,119 +438,43 @@ var mySwiper = new Swiper('.swiper-container', {
 	font-size: 12px;
 	font-weight: normal;
 }
+/* 左侧 */
 .books .left{
-	width: 55%;
+	float: left;
+	width: 53%;
 	border-right: 1px lightgray solid;
 }
-.books .left .one {
+/* 左侧上 */
+.books .left .books_top{
 	padding: 15px;
 	border-bottom: 1px lightgray solid;
 }
-.books .left .one img{
+.books .left .books_top img{
 	width: 100%;
 }
-.books .left .two{
-	padding: 15px;
+/* 左侧下 */
+.books .left .books_bottom{
 	display: flex;
 }
-.books .left .two a{
+.books .left .books_bottom a{
 	padding: 15px;
-	display: block;
 	flex: 1;
 }
-.books .left .two img{
+.books .left .books_bottom img{
 	width: 100%;
 }
+/* 右侧 */
 .books .right{
+	float: left;
 	padding:40px 15px 15px;
-	width: 45%;
+	width: 47%;
 }
 .books .right img{
 	width: 100%;
 }
 ```
 
-### 数码产品
 
-- 复制书籍的html及css
-- 直接将左浮动，换位有浮动，然后调整细节css
-- html
 
-```html
-			<!-- 数码产品 -->
-			<div class="products clearfix">
-				<h3 class="title">
-					<span href="javascript:;" class="icon_book"></span>数码产品
-					<a href="javascript:;" class="more fr">更多></a>
-				</h3>
-				<div class="left fr">
-					<div class="one">
-						<a href=""><img src="img/usb.png" alt=""></a>
-					</div>
-					<div class="two">
-						<a href=""><img src="img/card.png" alt=""></a>
-					</div>
-				</div>
-				<div class="right fr">
-					<a href=""><img src="img/pc.png" alt=""></a>
-				</div>
-			</div>
-```
 
-- css
-
-```css
-/* 数码产品 */
-.products{
-	margin-top: 15px;
-	background-color: #fff;
-}
-.products .title{
-	line-height: 20px;
-	padding: 5px 10px;
-	background-color: #fff;
-	font-weight: bold;
-	border-bottom: 1px solid lightgray;
-}
-.products .title span{
-	width: 20px;
-	height: 20px;
-	background-position: 3px -48px;
-	vertical-align: text-bottom;
-}
-.products .title .more{
-	color: #ff9900;
-	font-size: 12px;
-	font-weight: normal;
-}
-.products .left{
-	width: 55%;
-	border-left: 1px lightgray solid;
-}
-.products .left .one {
-	padding: 15px;
-	border-bottom: 1px lightgray solid;
-	text-align: center;
-}
-.products .left .one img{
-	width: 50%;
-}
-.products .left .two{
-	padding: 15px;
-	text-align: center;
-}
-.products .left .two a{
-	padding: 15px;
-}
-.products .left .two img{
-	width: 50%;
-}
-.products .right{
-	padding:40px 15px 15px;
-	width: 45%;
-}
-.products .right img{
-	width: 100%;
-}
-```
 
