@@ -474,7 +474,218 @@ var mySwiper = new Swiper('.swiper-container', {
 }
 ```
 
+### 产品
 
+- 复制书籍--更改---无主要知识点
+- html
+
+```html
+<!-- 产品 products -->
+<div class="products clearfix">
+    <h3 class="title">
+        <span href="javascript:;" class="icon_book"></span>数码产品
+        <a href="javascript:;" class="more fr">更多></a>
+    </h3>
+    <div class="left">
+        <div class="books_top">
+            <a href=""><img src="img/usb.png" alt=""></a>
+        </div>
+        <div class="books_bottom">
+            <a href=""><img src="img/card.png" alt=""></a>
+        </div>
+    </div>
+    <div class="right">
+        <a href=""><img src="img/pc.png"></a>
+    </div>
+			</div>
+```
+
+- css
+
+```css
+/* 产品 products*/
+.products{
+	margin-top: 15px;
+	background-color: #fff;
+}
+.products .title{
+	line-height: 20px;
+	padding: 5px 10px;
+	background-color: #fff;
+	font-weight: bold;
+	border-bottom: 1px solid lightgray;
+}
+.products .title span{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background-position: 3px -50px;
+	vertical-align: text-bottom;
+}
+.products .title .more{
+	color: #ff9900;
+	font-size: 12px;
+	font-weight: normal;
+}
+/* 左侧 */
+.products .left{
+	float: right;
+	width: 53%;
+	border-left: 1px lightgray solid;
+}
+/* 左侧上 */
+.products .left .books_top{
+	text-align: center;
+	padding: 15px;
+	border-bottom: 1px lightgray solid;
+}
+.products .left .books_top img{
+	width: 50%;
+}
+/* 左侧下 */
+.products .left .books_bottom{
+	display: flex;
+	text-align: center;
+}
+.products .left .books_bottom a{
+	padding: 15px;
+	flex: 1;
+}
+.products .left .books_bottom img{
+	width: 50%;
+}
+/* 右侧 */
+.products .right{
+	float: right;
+	padding:50px 15px 15px;
+	width: 47%;
+}
+.products .right img{
+	width: 100%;
+}
+```
+
+### 底线及底部
+
+- 底线忽略
+- 底部导航复制上部导航
+- html
+
+```html
+<!-- line-->
+<div class="line">
+    ~~我是有底线的~~
+</div>
+<!-- 底部导航 -->
+<footer class="footer">
+    <a href="javascript:;" class="icon_nav">
+        首页
+    </a>
+    <a href="javascript:;" class="icon_nav">
+        分类
+    </a>
+    <a href="javascript:;" class="icon_nav">
+        购物车
+    </a>
+    <a href="javascript:;" class="icon_nav">
+        我的
+    </a>
+</footer>
+```
+
+- css
+
+```css
+/* 底线 line */
+.line{
+	color: darkgray;
+	text-align: center;
+	line-height: 3em;
+}
+/* 底部导航 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #39435b;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 99;
+}
+.footer a{
+	padding-top: 30px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+}
+.footer a:nth-child(1){
+	background-position: -24px -200px;
+}
+.footer a:nth-child(2){
+	background-position: -127px -200px;
+}
+.footer a:nth-child(3){
+	background-position: -233px -200px;
+}
+.footer a:nth-child(4){
+	background-position: -335px -200px;
+}
+.footer a:hover{ /* 鼠标滑过效果 */
+	background-position-y: -260px;
+	color: steelblue;
+}
+.footer a:first-child{ /* 第一个a标签的效果 */
+	background-position-y: -260px;
+	color: steelblue;
+}
+```
+
+### 上下定位
+
+- 最上与最下设置固定定位
+
+```css
+/* 底部导航 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #39435b;
+	position: fixed; /* 设置固定定位 */
+	left: 0; /* 设置位置 为 左上 */
+	bottom: 0;
+	width: 100%; /* 设置宽度 */
+	z-index: 99; /* 设置定位显示层级 */
+}
+```
+
+- 固定定位的位置相对于窗口设置
+- 固定定位以后需要设置宽度
+- 固定定位后脱离文档流，不占原网页的位置
+- 多个标签定位在一个位置，需要使用z-index，设置标签的显示层级（上下关系）
+
+```css
+/* 顶部 */
+.top{
+	background-color: #39435b;
+	padding: 10px 15px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+}
+```
+
+- 给最外层.container，添加内边距。防止正常展示时，标签重叠。
+
+```css
+.container{
+	padding:55px 0 70px 0;
+}
+```
 
 
 
