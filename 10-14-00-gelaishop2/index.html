@@ -7,6 +7,8 @@
 		<title>格莱商城</title>
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/swiper.css">
+		<script src="js/swiper.js"></script>
 		<script src="js/jquery2.0.js"></script>
 		<script src="js/index.js"></script>
 	</head>
@@ -32,12 +34,30 @@
 			</div>
 			<!-- 轮播区域 -->
 			<div class="banner">
-				<div class="wrap">
-					<div class="slide"><a href=""><img src="img/banner.png" /></a></div>
-					<div class="slide"><a href=""><img src="img/banner2.png" /></a></div>
-					<div class="slide"><a href=""><img src="img/banner3.png" /></a></div>
-				</div>
+			    <div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide"><a href=""><img src="img/banner.png" /></a></div>
+			            <div class="swiper-slide"><a href=""><img src="img/banner2.png" /></a></div>
+			            <div class="swiper-slide"><a href=""><img src="img/banner3.png" /></a></div>
+			        </div>
+			        <!-- 如果需要分页器 -->
+			        <div class="swiper-pagination"></div>
+			    </div>
 			</div>
+			<script>
+				// 调用swiper效果，并进行配置
+				var mySwiper = new Swiper('.swiper-container', {
+				    /*常用配置：开启轮播、无缝轮播、左右按钮控制、分液器指示、分页器控制、操作后再次自动轮播*/
+				    //自动轮播
+				    autoplay: 2000,
+				    //无缝轮播
+				    loop: true,
+				    // 如果需要分页器
+				    pagination: '.swiper-pagination',
+				    //用户操作以后 依旧可以自动轮播
+				    disableOnInteraction: false,
+				})
+			</script>
 			<!-- 导航部分 -->
 			<nav class="nav">
 				<a href="javascript:;" class="icon_nav">

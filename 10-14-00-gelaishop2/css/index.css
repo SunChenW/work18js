@@ -50,34 +50,8 @@
 	background-position: -336px 0; /* 精灵图位置调整 */
 }
 /* 轮播区域 */
-.banner{
-	width: 100%;
-	overflow: hidden;
-}
-.banner .slide{
-	flex: 1;
-}
-.banner .wrap{
-	width: 300%;
-	display: flex;
-	position: relative;
-	/* 设置动画:动画名称 动画时间 动画速度 无限重复  */
-	animation: banner 10s ease-out infinite;
-}
 .banner img{
 	width: 100%;
-}
-/* 定义动画帧 */
-@keyframes banner{
-	0%,30%{
-		left: 0;
-	}
-	35%,65%{
-		left: -100%;
-	}
-	70%,100%{
-		left: -200%;
-	}
 }
 /* 导航区域 */
 .nav{
