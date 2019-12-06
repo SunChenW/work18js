@@ -687,5 +687,51 @@ var mySwiper = new Swiper('.swiper-container', {
 }
 ```
 
+## 商品分类
+
+### 弹性布局的使用
+
+```css
+.fenlei1{
+	margin-top: 15px;
+	display: flex; /* 父标签开启弹性布局 */
+	flex-wrap: wrap; /* 设置子标签超出换行 */
+	justify-content: space-between; /* 子标签对其方式  两端对其*/
+}
+```
+
+### 标签居中
+
+```css
+/* 垂直居中 ---水平居中*/
+position: relative; /* 定位 */
+top: 50%; /* 下移父标签的一半 */
+transform: translateY(-50%); /* 上移自己的一半 */
+/* 水平居中 */
+/* left: 50%;
+transform: translateX(-50%); */
+```
+
+### vh与vw
+
+```css
+/* height: 33vw; *//* vh vw 都是长度单位  1vw === 屏幕宽度的百分之1 */
+```
+
+### 标签阴影
+
+```css
+/* 水平偏移 垂直移动 羽化程度 颜色*/
+	box-shadow: 0 2px 5px hotpink; 
+```
+
+### 3d转换
+
+```css
+/* 3d转换:位移(垂直向上5px) */
+transform: translateY(-5px);
+/* 3d转换有 rotate(旋转) translate(位移) scale(缩放) skew(拉伸)  */
+```
+
 
 
