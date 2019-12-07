@@ -1,0 +1,138 @@
+.container{
+	/* 占住上下位置,留出空间 */
+	padding:55px 0 70px 0;
+}
+/* 顶部 */
+.top{
+	background-color: #39435b;
+	padding: 10px 15px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+}
+/* 顶部返回 */
+.top .top_logo{
+	width: 90px;
+	height: 35px;
+}
+.top .top_logo a{
+	display: block;
+	width: 35px;
+	height: 100%;
+	background-position: -150px 0;
+}
+/* 顶部标题 */
+.top .top_search{
+	width: calc(100% - 180px);  /* 使用css函数,计算结果. */
+	color:white;
+	text-align: center;
+	line-height: 35px;
+}
+/* 顶部搜索 */
+.top .top_user{
+	width: 90px;
+	height: 35px;
+	color:white;
+	line-height: 35px;
+}
+.top .top_user a{
+	float: left;
+	width: 35px;
+	height: 35px;
+	background-position: -180px 0; /* 精灵图位置调整 */
+}
+
+/* 分类1 */
+.fenlei1{
+	margin-top: 15px;
+	display: flex; /* 开启弹性布局 */
+	flex-wrap: wrap; /* 设置子标签超出换行 */
+	justify-content: space-between; /* 子标签对其方式  两端对其*/
+}
+.fenlei1 div{
+	background-color: #fff;
+	width: 33%;
+	margin-bottom: 2px;
+	/* height: 33vw; *//* vh vw 都是长度单位  1vw === 屏幕宽度的百分之1 */
+	height: 100px; /* vh vw 都是长度单位  1vw === 屏幕宽度的百分之1 */
+	text-align: center;
+}
+.fenlei1 div:hover{
+	/* 过渡效果 样式变化出现过渡效果 */
+	transition: all .3s;
+	/* 水平偏移 垂直移动 羽化程度 颜色*/
+	box-shadow: 0 0 3px hotpink;
+	/* 3d转换:位移(垂直向上5px) */
+	/* transform: translateY(-5px); */
+	 transform: scale(1.2);/* 放大1.2倍 */
+	/* 3d转换有 rotate(旋转) translate(位移) scale(缩放) skew(拉伸)  */
+	overflow: hidden; /* 溢出隐藏 */
+}
+.fenlei1 div img{
+	height: 100%;
+	width: 100%;
+	/* 垂直居中 ---水平居中*/
+	/* position: relative; */ /* 定位 */
+	/* top: 50%; /* 下移父标签的一半 */ */
+	/* transform: translateY(-50%); /* 上移自己的一半 */ */
+	/* 水平居中 */
+	/* left: 50%;
+	transform: translateX(-50%); */
+}
+.fenlei1 div img:hover{
+	transition: all .3s;
+	transform: scale(1.5);
+}
+/* fenlei2 */
+.fenlei2 h3{
+	width: 100%;
+	background-color: #fff;
+	line-height: 2em;
+	margin-bottom: 2px;
+	padding: 0 15px;
+}
+/* 加载 */
+.load{
+	text-align: center;
+	margin: 20px 0;
+}
+/* 底部导航 */
+.footer{
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 10%;
+	background-color: #39435b;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 99;
+}
+.footer a{
+	padding-top: 30px;
+	text-align: center;
+	font-size: 14px;
+	text-decoration: none;
+}
+.footer a:nth-child(1){
+	background-position: -24px -200px;
+}
+.footer a:nth-child(2){
+	background-position: -127px -200px;
+}
+.footer a:nth-child(3){
+	background-position: -233px -200px;
+}
+.footer a:nth-child(4){
+	background-position: -335px -200px;
+}
+.footer a:hover{ /* 鼠标滑过效果 */
+	background-position-y: -260px;
+	color: steelblue;
+}
+.footer a:nth-child(2){ /* 第一个a标签的效果 */
+	background-position-y: -260px;
+	color: steelblue;
+}
